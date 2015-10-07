@@ -17,27 +17,27 @@ public enum Default {
     MONSTER_ID,
     WAVATAR,
     RETRO;
-    
+
     public string to_param() {
         switch (this) {
             case NOT_FOUND:
                 return "404";
-            
+
             case MYSTERY_MAN:
                 return "mm";
-            
+
             case IDENTICON:
                 return "identicon";
-            
+
             case MONSTER_ID:
                 return "monsterid";
-            
+
             case WAVATAR:
                 return "wavatar";
-            
+
             case RETRO:
                 return "retro";
-            
+
             default:
                 assert_not_reached();
         }
@@ -56,8 +56,8 @@ public string get_image_uri(Geary.RFC822.MailboxAddress addr, Default def, int s
     // Gravatar spec for preparing address and hashing:
     // http://en.gravatar.com/site/implement/hash/
     string md5 = Checksum.compute_for_string(ChecksumType.MD5, addr.address.strip().down());
-    
-    return "http://www.gravatar.com/avatar/%s?d=%s&s=%d".printf(md5, def.to_param(), size);
+
+    return "http://localhost/gravatarlol/%s?d=%s&s=%d".printf(md5, def.to_param(), size);
 }
 
 }
