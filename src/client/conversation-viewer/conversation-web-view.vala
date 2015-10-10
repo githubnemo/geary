@@ -7,6 +7,7 @@
 public class ConversationWebView : StylishWebView {
     private const string[] always_loaded_prefixes = {
         "http://www.gravatar.com/avatar/",
+		"http://localhost:8090/",
         "data:"
     };
     

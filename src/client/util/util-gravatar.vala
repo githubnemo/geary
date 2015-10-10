@@ -57,7 +57,7 @@ public string get_image_uri(Geary.RFC822.MailboxAddress addr, Default def, int s
     // http://en.gravatar.com/site/implement/hash/
     string md5 = Checksum.compute_for_string(ChecksumType.MD5, addr.address.strip().down());
 
-    return "http://localhost/gravatarlol/%s?d=%s&s=%d".printf(md5, def.to_param(), size);
+    return "http://localhost:8090/?md5=%s&d=%s&s=%d".printf(md5, def.to_param(), size);
 }
 
 }
